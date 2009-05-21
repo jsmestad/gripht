@@ -1,3 +1,13 @@
 %h2 Index Action
 
 %p Stuff goes here.
+
+%h3 Current Projects
+%ul
+  = @projects
+  - @projects.each do |project|
+    %li= project[:name]
+    
+
+/ - @projects.each do |project|
+/   %li= project

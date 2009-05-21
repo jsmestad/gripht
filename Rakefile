@@ -5,7 +5,7 @@ require 'date'
 require 'spec/rake/spectask'
 
 GEM = "gripht"
-GEM_VERSION = "0.0.1"
+GEM_VERSION = "0.0.2"
 AUTHOR = "Justin Smestad"
 EMAIL = "justin.smestad@gmail.com"
 HOMEPAGE = "http://evalcode.com"
@@ -30,6 +30,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency "fakeweb", ">= 1.2.0"
   s.add_dependency 'haml', ">= 2.0.9"
   s.add_dependency 'rest-client', ">= 0.9.2"
+  s.add_dependency 'nokogiri'
 
   s.require_path = 'lib'
   s.autorequire = GEM

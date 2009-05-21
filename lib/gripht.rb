@@ -2,8 +2,9 @@ require 'rubygems'
 require 'sinatra/base'
 require 'haml/util'
 require 'haml/engine'
-require 'rest-client'
+require 'rest_client'
 require 'logger'
+require 'nokogiri'
 
 module Gripht
   module Log

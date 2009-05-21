@@ -16,7 +16,9 @@ module Gripht
     end
     
     get '/' do
-      ENV['TRACKER_TOKEN']
+      resource = RestClient::Resource.new 'http://www.pivotaltracker.com/services/v2/projects', :headers => { 'X-TrackerToken' => ENV['TRACKER_TOKEN']}
+      @projects = Nokogiri::XML.parse(resource.get).xpath('//project').collect { |r| { :id => r.at('id').content, :name => r.at('name').content } }
+      
       haml :index
     end
     
