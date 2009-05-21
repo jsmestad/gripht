@@ -23,12 +23,13 @@ spec = Gem::Specification.new do |s|
   s.email = EMAIL
   s.homepage = HOMEPAGE
 
-  s.add_dependency "sinatra", ">=0.9.1.1"
+  s.add_dependency "sinatra", ">= 0.9.1.1"
   s.add_dependency "rubigen", ">= 1.5.2"
-  s.add_dependency "rack-test", ">0.1.0"
-  s.add_dependency "webrat", ">0.4.3"
-  s.add_dependency "fakeweb", ">1.2.0"
-  s.add_dependency 'haml', ">2.0.9"
+  s.add_dependency "rack-test", ">= 0.1.0"
+  s.add_dependency "webrat", ">= 0.4.3"
+  s.add_dependency "fakeweb", ">= 1.2.0"
+  s.add_dependency 'haml', ">= 2.0.9"
+  s.add_dependency 'rest-client', ">= 0.9.2"
 
   s.require_path = 'lib'
   s.autorequire = GEM
