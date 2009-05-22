@@ -5,7 +5,7 @@ require 'spec/rake/spectask'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "gripht_check"
+    gem.name = "gripht"
     gem.summary = %Q{TODO}
     gem.email = "justin.smestad@gmail.com"
     gem.homepage = "http://github.com/jsmestad/gripht"
