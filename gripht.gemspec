@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gripht}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad"]
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
      "TODO",
      "VERSION",
      "config.ru.example",
-     "gripht_check.gemspec",
+     "gripht.gemspec",
      "lib/gripht.rb",
      "lib/gripht/app.rb",
      "lib/gripht/views/application.js",
