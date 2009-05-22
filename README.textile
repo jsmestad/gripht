@@ -1,4 +1,7 @@
-gripht
-======
+= gripht
 
-A gem that provides...
+Description to come.
+
+== Copyright
+
+Copyright (c) 2009 Justin Smestad. See LICENSE for details.
