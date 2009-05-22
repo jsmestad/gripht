@@ -10,6 +10,7 @@ begin
     gem.email = "justin.smestad@gmail.com"
     gem.homepage = "http://github.com/jsmestad/gripht"
     gem.authors = ["Justin Smestad"]
+    gem.rubyforge_project = "gripht"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
 
     gem.add_dependency "sinatra", ">= 0.9.1.1"
