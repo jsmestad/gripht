@@ -1,6 +1,6 @@
 h3. gripht
 
-p. Description to come.
+p. Gripht (`git` + `graph`) is a sinatra application that provides visibility into multiple Pivotal Tracker projects. The goal is to give a high-level view of what each project is currently working on with javascript controlled updates. This will allow the application to be open in "kiosk" mode for public viewing eventually utilizing graphing libraries to better visualize things like velocity and statistical averages.
 
 h3. Copyright
 
