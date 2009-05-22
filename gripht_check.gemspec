@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gripht_check}
-  s.version = "0.0.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Justin Smestad"]
-  s.date = %q{2009-05-21}
+  s.date = %q{2009-05-22}
   s.email = %q{justin.smestad@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
      "TODO",
      "VERSION",
      "config.ru.example",
+     "gripht_check.gemspec",
      "lib/gripht.rb",
      "lib/gripht/app.rb",
      "lib/gripht/views/application.js",
