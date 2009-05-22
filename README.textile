@@ -1,7 +1,7 @@
-= gripht
+h3. gripht
 
-Description to come.
+p. Description to come.
 
-== Copyright
+h3. Copyright
 
 Copyright (c) 2009 Justin Smestad. See LICENSE for details.
