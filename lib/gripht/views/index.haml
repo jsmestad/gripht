@@ -3,11 +3,24 @@
 %p Stuff goes here.
 
 %h3 Current Projects
-%ul
-  = @projects
-  - @projects.each do |project|
-    %li= project[:name]
-    
+
+- @projects.each do |project|
+  %h4
+    = project[:name]
+    %span
+      = " - "
+      %a{:href => "http://www.pivotaltracker.com/projects/#{project[:id]}", :id => project[:id] }
+        View Project
+  %ul
+    - project[:stories].each do |story|
+      %li.story
+        %a{:href => "#"}= story[:name]
+        = "(#{story[:owner]})"
+        %p.hidden
+          = story[:description] != "" ? story[:description] : "No Description Provided."
+          %br
+          %a{:href => story[:url]} Open story on Pivotal Tracker.
+
 
 / - @projects.each do |project|
 /   %li= project
