@@ -1,0 +1,10 @@
+/ This is a partial only used for rendering updates.
+- @stories[:stories].each do |story|
+  %li.story
+    %a{:href => "#"}
+      = story[:name]
+    "(#{story[:owner]})"
+    %p.hidden
+      = story[:description] != "" ? story[:description] : "No Description Provided."
+      %br
+      %a{:href => story[:url]} Open story on Pivotal Tracker.

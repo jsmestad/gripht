@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/jsmestad/gripht}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
+  s.rubyforge_project = %q{gripht}
   s.rubygems_version = %q{1.3.3}
   s.summary = %q{TODO}
   s.test_files = [
