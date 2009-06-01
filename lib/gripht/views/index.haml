@@ -1,26 +1,31 @@
-%h2 Index Action
-
-%p Stuff goes here.
-
-%h3 Current Projects
-
-- @projects.each do |project|
-  %h4
-    = project[:name]
-    %span
-      = " - "
-      %a{:href => "http://www.pivotaltracker.com/projects/#{project[:id]}", :id => project[:id] }
-        View Project
-  %ul
-    - project[:stories].each do |story|
-      %li.story
-        %a{:href => "#"}= story[:name]
-        = "(#{story[:owner]})"
-        %p.hidden
-          = story[:description] != "" ? story[:description] : "No Description Provided."
-          %br
-          %a{:href => story[:url]} Open story on Pivotal Tracker.
-
-
-/ - @projects.each do |project|
-/   %li= project
+%h1 Gripht
+%p This is the gripht dashboard. It is continuously polling Pivotal Tracker for current status on its member projects.
+- if @projects.empty?
+  %h4 Uh oh!
+  %p It seems that the provided Pivotal Tracker API Key does not have access to any projects. Add them to a project, then reload this page.
+- else
+  - @projects.each do |project|
+    %h4
+      = project[:name]
+      %span
+        = " - "
+        %a{:href => "http://www.pivotaltracker.com/projects/#{project[:id]}", :id => project[:id] }
+          View Project
+    %h5 In Progress
+    %ul
+      - project[:started].each do |story|
+        %li.story
+          %a{:href => "#"}= story[:name]
+          = "(#{story[:owner]})"
+          %p.hidden
+            = story[:description] != "" ? story[:description] : "No Description Provided."
+            %br
+            %a{:href => story[:url]} Open story on Pivotal Tracker.
+    %h5 Recently Finished
+    %ul
+      - if project[:finished].empty?
+        %p No stories have been completed recently.
+      - project[:finished].each do |story|
+        %li.story
+          = story[:name]
+    %hr

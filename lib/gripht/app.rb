@@ -7,9 +7,13 @@ module Gripht
         RestClient::Resource.new 'http://www.pivotaltracker.com/services/v2/projects', :headers => { 'X-TrackerToken' => ENV['TRACKER_TOKEN']}
       end
       
-      def fetch_stories(project_id)
-        stories = Nokogiri::XML(resource["#{project_id}/stories?limit=10&filter=state%3Astarted"].get).xpath('//story')
-        { :stories => stories.collect do |story|
+      def fetch_stories(project_id, limit=10, options={})
+        options = {:state => 'started'} if options.empty?
+        params = "limit=#{limit}&filter="
+        options.each { |key, value| params << "#{key.to_s}%3A%22#{CGI::escape(value)}%22%20" }
+        stories = Nokogiri::XML(resource["#{project_id}/stories?#{params}"].get).xpath('//story')
+        #Gripht::Log.logger.error CGI::escape(params)
+        { options[:state].to_sym => stories.collect do |story|
             {
               :name => story.at('name').content,
               :owner => story.at('owned_by').content,
@@ -40,6 +44,7 @@ module Gripht
     get '/' do 
       @projects = Nokogiri::XML(resource.get).xpath('//project').collect { |r| { :id => r.at('id').content, :name => r.at('name').content } }
       @projects.each { |project| project.merge!(fetch_stories(project[:id])) }
+      @projects.each { |project| project.merge!(fetch_stories(project[:id], 10, {:state => 'finished'})) }
       haml :index
     end
     

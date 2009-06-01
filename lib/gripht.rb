@@ -10,7 +10,7 @@ module Gripht
   module Log
     def self.logger
       if @logger.nil?
-        @logger        = Logger.new("lifeline.log")
+        @logger        = Logger.new("gripht.log")
         @logger.level  = Logger::INFO 
       end
       @logger
